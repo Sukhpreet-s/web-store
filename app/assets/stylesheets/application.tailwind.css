@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  a {
+    @apply hover:underline;
+  }
+
+  input[type="submit"], button {
+    /* @apply px-2 rounded-full border border-black; */
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer;
   }
 }
-
-*/
