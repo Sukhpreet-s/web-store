@@ -1,0 +1,16 @@
+<div>
+  <%= form_with url: login_path do %>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+    <div>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div>
+      <%= submit_tag "Log In" %>
+    </div>
+  <% end %>
+
+</div>

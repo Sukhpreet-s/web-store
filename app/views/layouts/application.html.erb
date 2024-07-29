@@ -12,6 +12,21 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to 'Products', root_path %></li>
+        <% if logged_in? %>
+          <% if current_user.merchant? %>
+            <li><%= link_to 'New Product', new_product_path %></li>
+          <% end %>
+          <li>Logged in as <u><%= current_user.email %></u></li>
+          <li><%= link_to 'Logout', logout_path, data: { turbo_method: :delete } %></li>
+        <% else %>
+          <li><%= link_to 'Login', login_path %></li>
+          <li><%= link_to 'Sign Up', signup_path %></li>
+        <% end %>
+      </ul>
+    </nav>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
