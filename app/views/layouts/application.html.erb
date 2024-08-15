@@ -27,7 +27,14 @@
         <% end %>
       </ul>
     </nav>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-28 px-5">
+      <% if notice %>
+        <p class="text-green-500 mb-5"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="text-red-500 mb-5"><%= alert %></p>
+      <% end %>
+
       <%= yield %>
     </main>
   </body>
