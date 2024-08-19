@@ -20,9 +20,12 @@
       <strong>Price:</strong>
       <%= product.price %>
     </p>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    <%# Conditionally show the 'show this product' button %>
+    <% if local_assigns[:show_full] %>
+      <p>
+        <%= link_to "Show this product", product %>
+      </p>
+    <% end %>
   </div>
 
 </article>

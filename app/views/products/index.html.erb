@@ -3,6 +3,6 @@
 
 <div id="products">
   <% @products.each do |product| %>
-    <%= render product %>
+    <%= render product, show_full: true %>
   <% end %>
 </div>
