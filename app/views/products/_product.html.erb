@@ -1,24 +1,28 @@
-<div id="<%= dom_id product %>" class="mt-5">
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
+<article id="<%= dom_id product %>" class="mt-5 flex">
+  <%# Show image %>
+  <% if product.images.attached? %>
+    <%= image_tag product.images.first, alt: product.name, class: 'flex-none w-32 h-32 object-cover' %>
+  <% else %>
+    <%= image_tag 'placeholder-image.png', alt: 'No image available', class: 'flex-none w-32 h-32 object-cover' %>
+  <% end %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
+  <%# Product Info %>
+  <div class="flex-initial p-5">
+    <p>
+      <strong>Name:</strong>
+      <%= product.name %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= product.description %>
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <%= product.price %>
+    </p>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Images:</strong>
-    <% product.images.each do |image| %>
-      <div><%= link_to image.filename, image %></div>
-    <% end %>
-  </p>
-
-</div>
+</article>
