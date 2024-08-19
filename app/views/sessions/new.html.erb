@@ -1,10 +1,11 @@
 <div>
+  <h1>Log In</h1>
   <%= form_with url: login_path do %>
-    <div>
+    <div class="mb-3">
       <%= label_tag :email %>
       <%= email_field_tag :email %>
     </div>
-    <div>
+    <div class="mb-3">
       <%= label_tag :password %>
       <%= password_field_tag :password %>
     </div>
