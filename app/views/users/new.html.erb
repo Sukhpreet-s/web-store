@@ -1,5 +1,15 @@
 <div>
   <%= form_with model: @user do |form| %>
+    <% if @user.errors.any? %>
+      <div style="color: red">
+        <ul>
+          <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
     <div>
       <%= form.label :email %>
       <%= form.email_field :email %>
