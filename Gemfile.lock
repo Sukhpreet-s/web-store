@@ -102,6 +102,8 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.13.0)
+    faker (3.4.2)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -146,6 +148,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    open-uri (0.4.1)
+      stringio
+      time
+      uri
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -222,6 +228,8 @@ GEM
     tailwindcss-rails (2.6.4-x86_64-linux)
       railties (>= 7.0.0)
     thor (1.3.1)
+    time (0.3.0)
+      date
     timeout (0.4.1)
     turbo-rails (2.0.6)
       actionpack (>= 6.0.0)
@@ -231,6 +239,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2024.1)
       tzinfo (>= 1.0.0)
+    uri (0.13.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -254,8 +263,10 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faker
   importmap-rails
   jbuilder
+  open-uri
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
   selenium-webdriver

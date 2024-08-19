@@ -55,7 +55,7 @@ end
 
 merchants.each do |merchant|
   merchant.products.each do |product|
-    product.images.attach(io: File.open(Rails.root.join('db', 'images', 'mr-cow.jpg')), filename: 'image1.jpg')
+    product.images.attach(io: URI.open(Faker::LoremFlickr.image), filename: "#{product.name}.jpg")
   end
 end
 
