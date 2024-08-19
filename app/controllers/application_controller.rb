@@ -16,12 +16,16 @@ class ApplicationController < ActionController::Base
   end
 
   def require_merchant
-    flash.alert = 'You do not have permissions to access this feature!'
-    redirect_to root_path unless logged_in? && current_user.role == 'merchant'
+    if !logged_in? || current_user.role != 'merchant'
+      flash.alert = 'You do not have permissions to access this feature!'
+      redirect_to root_path
+    end
   end
 
   def require_customer
-    flash.alert = 'You do not have permissions to access this feature!'
-    redirect_to root_path unless logged_in? && current_user.role == 'customer'
+    if !logged_in? || current_user.role != 'customer'
+      flash.alert = 'You do not have permissions to access this feature!'
+      redirect_to root_path
+    end
   end
 end
