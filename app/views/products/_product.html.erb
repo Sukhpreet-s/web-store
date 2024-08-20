@@ -22,8 +22,13 @@
     </p>
     <%# Conditionally show the 'show this product' button %>
     <% if local_assigns[:show_full] %>
+      <div class="mt-1.5">
+        <%= link_to "Edit this product", edit_product_path(@product), class: "btn" %> 
+        <%= button_to "Destroy this product", @product, method: :delete, class: "btn", form_class: "inline-block" %>
+      </div>
+    <% else %>
       <p>
-        <%= link_to "Show this product", product %>
+        <%= link_to "Show this product", product, class: "btn" %>
       </p>
     <% end %>
   </div>

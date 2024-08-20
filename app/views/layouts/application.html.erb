@@ -14,16 +14,16 @@
   <body>
     <nav>
       <ul>
-        <li><%= link_to 'Products', root_path %></li>
+        <li><%= link_to 'Products', root_path, class: "link" %></li>
         <% if logged_in? %>
           <% if current_user.merchant? %>
-            <li><%= link_to 'New Product', new_product_path %></li>
+            <li><%= link_to 'New Product', new_product_path, class: "link" %></li>
           <% end %>
           <li>Logged in as <u><%= current_user.email %></u></li>
-          <li><%= link_to 'Logout', logout_path, data: { turbo_method: :delete } %></li>
+          <li><%= link_to 'Logout', logout_path, data: { turbo_method: :delete }, class: "link" %></li>
         <% else %>
-          <li><%= link_to 'Login', login_path %></li>
-          <li><%= link_to 'Sign Up', signup_path %></li>
+          <li><%= link_to 'Login', login_path, class: "link" %></li>
+          <li><%= link_to 'Sign Up', signup_path, class: "link" %></li>
         <% end %>
       </ul>
     </nav>

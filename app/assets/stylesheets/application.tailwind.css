@@ -36,18 +36,18 @@
   }
 
   /* Links */
-  a {
-    color: #007bff; /* Bootstrap-style link color */
+  /* a {
+    color: #007bff; 
     text-decoration: underline;
     cursor: pointer;
   }
 
   a:hover {
-    color: #0056b3; /* Darker blue on hover */
-  }
+    color: #0056b3; 
+  } */
 
   /* Buttons */
-  button,
+  /* button,
   input[type="button"],
   input[type="submit"] {
     display: inline-block;
@@ -79,11 +79,30 @@
   input[type="submit"]:focus {
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  } */
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    padding: 0 0.4rem;
   }
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  padding: 0 0.4rem;
+@layer components {
+  .link {
+    @apply text-blue-500 underline cursor-pointer;
+  }
+  .link:hover {
+    @apply text-blue-700;
+  }
+
+  .btn {
+    @apply 
+        inline-block font-normal text-center whitespace-nowrap align-middle select-none 
+        border  px-2.5 py-0.5 text-sm leading-6 rounded-md 
+         cursor-pointer border-black;
+  } 
+  .btn:hover {
+    @apply bg-gray-300;
+  }
 }
